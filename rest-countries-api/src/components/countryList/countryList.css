@@ -41,23 +41,11 @@
     margin-bottom: 20px;
     margin: 0 5rem;
 }
-.country{
-    display: flex;
-    flex-direction: column;
-    width: 1072px;
-    max-width: 250px;
+
+input{
+    
+    height: 2rem;
     border: 1px solid #ccc;
-    margin-top: 1rem;
-    
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-.country, h3, p{
-    
-    margin-left: 1rem;
-}
-.country, h3{
-    
-    margin-top: 1rem;
+    padding: 0 1rem;
 }
