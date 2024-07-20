@@ -10,42 +10,54 @@
         flex-direction: column;
         /* max-width: 1200px; */
         margin: 0 auto;
+        /* padding: 0 4rem; */
           
         
     }
-    section{
-       padding: 0 4rem;
-       justify-content: center;
+    .header{
+        display:flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 3rem;
+        margin-bottom: 2rem;
+        background-color: tomato;
+        padding: 1rem 5rem;
+          
     }
-.header{
-    display:flex;
-    width: 100%;
-height: 3rem;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    background-color: tomato;
-    padding: 0 4rem;
-}
+    
 .content{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Adds space between columns */
+    gap: 2rem; /*Adds space between columns*/
     margin-top: 20px;
+    justify-content: center; 
     
+
 
 }
 .search{
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    margin: 0 5rem;
 }
 .country{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 200px;
+    width: 1072px;
+    max-width: 250px;
     border: 1px solid #ccc;
+    margin-top: 1rem;
+    
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+}
+.country, h3, p{
+    
+    margin-left: 1rem;
+}
+.country, h3{
+    
+    margin-top: 1rem;
 }

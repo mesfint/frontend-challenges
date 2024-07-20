@@ -9,36 +9,33 @@ const CountryList = () => {
 
   return (
     <main className='container'>
-
         <header className="header">
             <p>Where in the world?</p>
             <p>Dark Mode</p>
         </header>
-        <section>
-            
-       
         <div className='search'>
             <input type="text" placeholder="Search for a country..."/>
             <select>
                 <option value="Filter by Region">Filter by Region</option>
                 </select>
-        </div>
+                </div>
+        
         <div className="content">
         {data && data.map((country)=>{
             return(
                 <div key={country.name} className='country'>
                     <img src={country.flag} alt={country.name} />
                     <h3>{country.name}</h3>
-                    <p>Population: {country.population}</p>
-                    <p>Region: {country.region}</p>
-                    <p>Capital: {country.capital}</p>
+                    <p><strong>Population:</strong> {country.population}</p>
+                    <p><strong>Region:</strong> {country.region}</p>
+                    <p><strong>Capital:</strong> {country.capital}</p>
                     
                 </div>
             )
         })}
 
         </div>
-        </section>
+        
         
         
     </main>
