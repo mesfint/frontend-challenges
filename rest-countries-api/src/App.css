@@ -5,10 +5,13 @@
     box-sizing: border-box;
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    padding: 0 5rem; /* Add padding to the left and right */
+    padding-top: 6rem; /* Add padding to top to account for fixed header */
 }
 
 .header {
@@ -16,29 +19,18 @@
     justify-content: space-between;
     width: 100%;
     height: 3rem;
-    margin-bottom: 2rem;
     padding: 1rem 5rem;
     background-color: tomato;
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 .content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem; /* Adds space between columns */
-    margin-top: 20px;
-    justify-content: center;
-}
+    width: 100%;
+    margin: 2rem 0;
+    border: 1px solid #e0e0e0;
 
-.search {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    margin: 0 5rem;
-}
-
-input {
-    height: 2rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 0 1rem;
 }

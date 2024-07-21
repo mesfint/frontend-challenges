@@ -1,4 +1,5 @@
 import Country from '../country/Country';
+import './countryList.css';
 
 
 
@@ -15,9 +16,10 @@ const CountryList = ({countries}) => {
             <select>
                 <option value="Filter by Region">Filter by Region</option>
                 </select>
-                </div>
+        </div>
         
         <div className="content">
+            <div className="country-content">
         {countries && countries.map((country)=>{
             return(
                 <div key={country.name} >
@@ -26,6 +28,8 @@ const CountryList = ({countries}) => {
                 </div>
             )
         })}
+
+            </div>
 
         </div>
         

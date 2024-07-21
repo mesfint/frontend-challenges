@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import data from '../rest-countries-api-with-color-theme-switcher-master/data';
 import './App.css';
-import Layout from './components/layout/Layout';
-import CountryDetail from './components/countryDetails/CounterDetail.jsx';
+import CountryDetail from './components/countryDetails/CountryDetail';
 import CountryList from './components/countryList/CountryList';
+import Layout from './components/layout/Layout';
 
 function App() {
   const [countries, setCountries] = useState([])
   useEffect(() => {
-    setCountries(data)
+    setCountries(data)  
     console.log(countries)
   }, [])
 

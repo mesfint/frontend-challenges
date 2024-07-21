@@ -1,0 +1,9 @@
+.country-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem; /* Adds space between columns */
+    /*margin-top: 2rem;*/
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+}
