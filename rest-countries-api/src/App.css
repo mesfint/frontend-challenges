@@ -11,7 +11,7 @@
     flex-direction: column;
     margin: 0 auto;
     padding: 0 5rem; /* Add padding to the left and right */
-    padding-top: 6rem; /* Add padding to top to account for fixed header */
+    padding-top: 2rem; /*Add padding to top to account for fixed header*/
 }
 
 .header {
@@ -31,6 +31,8 @@
 .content {
     width: 100%;
     margin: 2rem 0;
-    border: 1px solid #e0e0e0;
+    padding: 0 -5rem;
+
+    /* border: 1px solid #e0e-0e0; */
 
 }

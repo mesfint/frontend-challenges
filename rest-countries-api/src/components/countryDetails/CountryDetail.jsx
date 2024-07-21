@@ -18,6 +18,7 @@ const CountryDetail = ({ countries }) => {
           <img src={country.flag} alt={country.name} style={{ width: '200px' }} />
         
         <div className="detail">
+          <div className='detail-text'>
           <div className='detail-info'>
           <h1>{country.name}</h1>
           <p>Native Name: {country.nativeName}</p>
@@ -32,9 +33,7 @@ const CountryDetail = ({ countries }) => {
             <p>Currencies: {country.currencies?.[0]?.name || 'N/A'}</p>
             <p>Languages: {country.languages?.map((lang) => lang.name).join(', ') || 'N/A'}</p>
           </div>
-
-        </div>
-        </div>
+          </div>
         <div className="border-countries">
           <p>Border Countries: </p>
           {country.borders?.length ? (
@@ -47,6 +46,9 @@ const CountryDetail = ({ countries }) => {
           ) : (
             <p>No border countries</p>
           )}
+        </div>
+
+        </div>
         </div>
       </div>
     

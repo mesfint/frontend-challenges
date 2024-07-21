@@ -6,19 +6,27 @@ import CountryDetail from './components/countryDetails/CountryDetail';
 import CountryList from './components/countryList/CountryList';
 import Layout from './components/layout/Layout';
 
+
 function App() {
   const [countries, setCountries] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+
   useEffect(() => {
-    setCountries(data)  
-    console.log(countries)
-  }, [])
+    // if loading is true, show the loader else show the countries
+    setIsLoading(true);
+    setTimeout(() => {
+      setCountries(data);
+      setIsLoading(false);
+    }, 2000); // Simulate a delay for loading
+    console.log(countries);
+  }, []);
 
   return (
     <>
     <Router>
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route index element={<CountryList countries={countries} />} />
+          <Route index element={<CountryList countries={countries} loading={isLoading} />} />
           <Route path='country/:name' element={<CountryDetail countries={countries} />} />
         </Route>
       </Routes>
