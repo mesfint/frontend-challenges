@@ -28,7 +28,7 @@
 .content{
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem; /*Adds space between columns*/
+    gap: 1rem; /*Adds space between columns*/
     margin-top: 20px;
     justify-content: center; 
     

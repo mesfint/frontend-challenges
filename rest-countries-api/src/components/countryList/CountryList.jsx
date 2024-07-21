@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import data from '../../../rest-countries-api-with-color-theme-switcher-master/data.json';
 import Country from '../country/Country';
 import "./countryList.css";
 
 
 
-const CountryList = () => {
-    const [countries, setCountries] = useState([])
+const CountryList = ({countries}) => {
 
 
   return (
@@ -24,7 +21,7 @@ const CountryList = () => {
                 </div>
         
         <div className="content">
-        {data && data.map((country)=>{
+        {countries && countries.map((country)=>{
             return(
                 <div key={country.name} >
                     <Country country={country}/>
