@@ -1,19 +1,21 @@
-.country{
+/* country.css */
+.country {
     display: flex;
     flex-direction: column;
-    width: 1072px;
+    width: 100%; /* Adjusted from 1072px */
     max-width: 250px;
     border: 1px solid #ccc;
-    margin-top: 1rem; 
+    margin-top: 1rem;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     padding-bottom: 1rem;
 }
-.country, h3, p{
+
+.country h3, .country p {
     margin-left: 1rem;
 }
-.country, h3{
-    
+
+.country h3 {
     margin-top: 1rem;
 }

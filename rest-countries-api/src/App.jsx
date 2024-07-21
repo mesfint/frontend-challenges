@@ -1,9 +1,10 @@
-import React, { useState,useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import data from '../rest-countries-api-with-color-theme-switcher-master/data';
-import CountryDetail from './components/countryDetails/CounterDetail.jsx'
-import CountryList from './components/countryList/CountryList'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css'
+import './App.css';
+import Layout from './components/layout/Layout';
+import CountryDetail from './components/countryDetails/CounterDetail.jsx';
+import CountryList from './components/countryList/CountryList';
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -14,12 +15,14 @@ function App() {
 
   return (
     <>
-     <Router>
-        <Routes>
-          <Route path='/' element={<CountryList countries={countries} />} />
-          <Route path='/country/:name' element={<CountryDetail countries={countries} />} />
-        </Routes>
-      </Router>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<CountryList countries={countries} />} />
+          <Route path='country/:name' element={<CountryDetail countries={countries} />} />
+        </Route>
+      </Routes>
+    </Router>
         
     </>
   )

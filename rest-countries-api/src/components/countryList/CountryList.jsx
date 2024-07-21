@@ -1,5 +1,5 @@
 import Country from '../country/Country';
-import "./countryList.css";
+
 
 
 
@@ -7,11 +7,8 @@ const CountryList = ({countries}) => {
 
 
   return (
-    <main className='container'>
-        <header className="header">
-            <p>Where in the world?</p>
-            <p>Dark Mode</p>
-        </header>
+    <main>
+        
         <div className='search'>
     
             <input type="text" placeholder= "Search for a country..."/>
