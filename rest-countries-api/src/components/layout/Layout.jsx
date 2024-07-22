@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { MdOutlineLightMode } from "react-icons/md";
 import { Outlet } from 'react-router-dom';
 import '../../App.css';
 import { DarkModeContext } from '../../context/DarkModeContext';
@@ -11,9 +12,10 @@ const Layout = () => {
     <div className={ darkMode ? 'container dark-mode' : 'container'}>
       <header className="header">
         <p>Where in the world?</p>
-        <button className='dark-light-toggler' onClick={toggleDarkMode}>{darkMode ? 'Light Mode': 'Dark Mode'}</button>
+       
+        <button className='dark-light-toggler' onClick={toggleDarkMode}> <MdOutlineLightMode className={ darkMode ? 'icon dark-mode' : 'icon'}/> {darkMode ? 'Light Mode': 'Dark Mode'}</button>
       </header>
-      <main>
+      <main className={ darkMode ? 'content dark-mode': 'content'}>
      <Outlet />
     </main>
     </div>

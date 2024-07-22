@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { DarkModeContext } from '../../context/DarkModeContext';
 import './countryDetail.css';
 
+
 const CountryDetail = ({ countries }) => {
+  const { darkMode } = useContext(DarkModeContext);
   const { name } = useParams();
   const country = countries && countries.find((c) => c.name === name);
 
   if (!country) {
     return <p>Country not found</p>;
   }
-
    return (
-    <div className='content-detail'>
+
+    <div className={darkMode ? 'content-detail dark-mode' : 'content-detail'}>
       <button className='back-button' onClick={() => window.history.back()}>Back</button>
       <div className="details">
         
-          <img src={country.flag} alt={country.name} style={{ width: '200px' }} />
+          <img src={country.flag} alt={country.name} style={{ width: '250px', height : '250px'}} />
         
         <div className="detail">
           <div className='detail-text'>

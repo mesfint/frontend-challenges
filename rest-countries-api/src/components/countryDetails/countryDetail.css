@@ -2,11 +2,18 @@
 .content-detail {
     display: flex;
     flex-direction: column;
-    margin: 2rem 0;
+    margin: 2rem 0 5rem 0;
     border: 1px solid #e0e0e0;
     box-sizing: border-box;
+    padding-bottom: 2rem;
     width: 100%;
 }
+.dark-mode .content-detail {
+    background-color: hsl(207, 26%, 17%);
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
 .back-button {
     display: flex;
     width: 4rem; 
@@ -14,7 +21,6 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-   
     color: rgb(68, 64, 64);
     border: none;
     border-radius: 5px;

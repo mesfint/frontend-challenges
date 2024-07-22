@@ -5,24 +5,51 @@
     width: 100%;
     gap: 1rem;
     justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
   }
-  
-  /* Search Bar */
-  .search {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-    padding: 0 5rem;
-  }
+
+  /* .content {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 0; 
+} */
+
+
+/* .dark-mode .country-content {
+  background-color: hsl(207, 26%, 17%);
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+} */
+
+/* Search Bar */
+.search {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 0 5rem;
+}
+ /* .dark-mode .input {
+     background-color: hsl(209, 23%, 22%);
+    color: #ffffff; 
+}  */
   
   input, select {
     padding: 1rem;
-    border: none;
+    border: 1px solid hsl(0, 0%, 90%);
+    border-radius: 5px;
     outline: none;
+    background-color: hsl(0, 0%, 98%);
+    color:  hsl(200, 15%, 8%);
+  }
+
+  .dark-mode  {
+    background-color: hsl(207, 26%, 17%);
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
   }
   
   select:focus {
-    border: 1px solid hsl(200, 15%, 8%);
+    border: 1px solid 
   }
   
   select option {

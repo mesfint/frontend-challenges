@@ -18,10 +18,15 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Mode */
-.dark-mode {
+/* Dark mode styles */
+.dark-mode .container,
+.dark-mode .header,
+.dark-mode .search,
+.dark-mode .content {
   background-color: hsl(207, 26%, 17%);
-  color: hsl(0, 0%, 100%);
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+
 }
 
 /* Header */
@@ -31,7 +36,7 @@
   width: 100%;
   height: 3rem;
   padding: 1rem 5rem;
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 98%);
   color: hsl(200, 15%, 8%);
   position: fixed;
   top: 0;
@@ -41,8 +46,15 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.dark-mode .header {
-  background-color: hsl(209, 23%, 22%);
+
+
+.icon {
+  color: black;
+
+}
+.dark-mode .icon {
+color: white;
+
 }
 
 /* Main Content */
@@ -50,7 +62,10 @@
   width: 100%;
   margin: 2rem 0;
   padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+  /* background-color: hsl(207, 26%, 17%); */
 }
+
 
 /* Button */
 button {

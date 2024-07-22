@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { LuLoader2 } from "react-icons/lu";
+import { DarkModeContext } from '../../context/DarkModeContext';
 import Country from '../country/Country';
 import './countryList.css';
 
@@ -7,6 +8,8 @@ const CountryList = ({ countries, loading }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const [region, setRegion] = useState('All');
+
+  const { darkMode } = useContext(DarkModeContext);
 
   
 
@@ -32,16 +35,18 @@ const CountryList = ({ countries, loading }) => {
   }
 
   return (
-    <main className='container'>
-      
-      
-      <div className='search'>
+    <main className={ darkMode ? 'content dark-mode' : 'content'}>
+      <div className= 'search'>
         <input 
+        className ={ darkMode ? 'input dark-mode' : 'input'}
         type="text" 
         placeholder="Search for a country..."
          value={searchTerm} 
          onChange={(e)=>setSearchTerm(e.target.value)} />
-        <select value={region} onChange={handleRegionChange}>
+        <select 
+        value={region}
+         onChange={handleRegionChange}
+          className={ darkMode ? 'select dark-mode' : 'select'}>
         <option value="All">All</option>
           <option value="Africa">Africa</option>
           <option value="Americas">Americas</option>
@@ -52,13 +57,13 @@ const CountryList = ({ countries, loading }) => {
         </select>
       </div>
       
-      <div className="content">
+      <div className={ darkMode ? 'content dark-mode' : 'content'}>
         {loading ? (
           <div className="loader">
             <LuLoader2 className="loading-icon" />
           </div>
         ) : (
-          <div className="country-content">
+          <div className={ darkMode ? 'country-content dark-mode' : 'country-content'}>
             {filteredCountries && filteredCountries.map((country) => (
               <div key={country.name}>
                 <Country country={country} />

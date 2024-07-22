@@ -4,7 +4,8 @@
     flex-direction: column;
     width: 100%;
     max-width: 200px;
-    border: 1px solid hsl(0, 0%, 52%);
+    /* border: 1px solid hsl(0, 0%, 52%); */
+    /* background-color: hsl(209, 23%, 22%); */
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -30,4 +31,12 @@
   .country p {
     font-weight: 300;
   }
-  
+  .country-info span {
+    font-weight: 400;
+  }
+
+
+.dark-mode .country-info {
+  background-color: hsl(207, 26%, 17%);
+  color: #ffffff;
+}
