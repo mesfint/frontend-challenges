@@ -1,38 +1,68 @@
 /* App.css */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-
 .container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 0 5rem; /* Add padding to the left and right */
-    padding-top: 2rem; /*Add padding to top to account for fixed header*/
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 5rem; /* Add padding to the left and right */
+  padding-top: 6rem; /* Adjust padding to account for the fixed header */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 3rem;
-    padding: 1rem 5rem;
-    background-color: tomato;
-    position: fixed; /* Fix the header at the top */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Ensure it stays on top */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 3rem;
+  padding: 1rem 5rem;
+  background-color: #ffffff;
+  color: #000000;
+  position: fixed; /* Fix the header at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode .header {
+  background-color: #1f1f1f;
+  color: #ffffff;
 }
 
 .content {
-    width: 100%;
-    margin: 2rem 0;
-    padding: 0 -5rem;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 0 0;
+}
 
-    /* border: 1px solid #e0e-0e0; */
+.dark-light-toggler {
+  display: flex; 
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 1rem;
+ 
+  color: rgb(68, 64, 64);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+/* Optional: Additional styling for the button */
+.dark-light-toggler:hover {
+  text-decoration: underline;
 }

@@ -12,7 +12,7 @@ const CountryDetail = ({ countries }) => {
 
    return (
     <div className='content-detail'>
-      <button onClick={() => window.history.back()}>Back</button>
+      <button className='back-button' onClick={() => window.history.back()}>Back</button>
       <div className="details">
         
           <img src={country.flag} alt={country.name} style={{ width: '200px' }} />
@@ -40,7 +40,7 @@ const CountryDetail = ({ countries }) => {
             country.borders.map((border) => {
               const borderCountry = countries.find((c) => c.alpha3Code === border);
               return borderCountry ? (
-                <a key={borderCountry.alpha3Code}>{borderCountry.name}</a>
+                <button className='borders' key={borderCountry.alpha3Code}>{borderCountry.name}</button>
               ) : null;
             })
           ) : (

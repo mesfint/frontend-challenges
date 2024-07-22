@@ -7,16 +7,30 @@
     box-sizing: border-box;
     width: 100%;
 }
-
-button {
+.back-button {
     display: flex;
-    width: 4rem;
-    height: 3rem;
+    width: 4rem; 
+    height: 3rem; 
     justify-content: center;
     text-align: center;
     align-items: center;
    
-    color: white;
+    color: rgb(68, 64, 64);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.borders {
+    display: flex;
+    /* width: 4rem; */
+    /* height: 3rem; */
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+   
+    color: rgb(68, 64, 64);
     border: none;
     border-radius: 5px;
     cursor: pointer;

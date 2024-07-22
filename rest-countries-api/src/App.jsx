@@ -21,18 +21,25 @@ function App() {
     console.log(countries);
   }, []);
 
+  const toggleDarkMode = () => {
+    setDarkMode((prevMode)=>!prevMode);
+  }
+
   return (
-    <>
+
+    
     <Router>
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<CountryList countries={countries} loading={isLoading} />} />
-          <Route path='country/:name' element={<CountryDetail countries={countries} />} />
+          <Route path='country/:name' element={<CountryDetail countries={countries}  /> } />
         </Route>
       </Routes>
     </Router>
+
+    
         
-    </>
+    
   )
 }
 

@@ -33,10 +33,7 @@ const CountryList = ({ countries, loading }) => {
 
   return (
     <main className='container'>
-      <header className="header">
-        <p>Where in the world?</p>
-        <p>Dark Mode</p>
-      </header>
+      
       
       <div className='search'>
         <input 
@@ -70,6 +67,7 @@ const CountryList = ({ countries, loading }) => {
           </div>
         )}
       </div>
+  
     </main>
   );
 };
