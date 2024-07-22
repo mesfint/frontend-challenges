@@ -1,68 +1,106 @@
-/* App.css */
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Container */
 .container {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 0 5rem; /* Add padding to the left and right */
-  padding-top: 6rem; /* Adjust padding to account for the fixed header */
+  padding: 0 5rem;
+  padding-top: 6rem;
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Dark Mode */
 .dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+  background-color: hsl(207, 26%, 17%);
+  color: hsl(0, 0%, 100%);
 }
 
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 3rem;
   padding: 1rem 5rem;
-  background-color: #ffffff;
-  color: #000000;
-  position: fixed; /* Fix the header at the top */
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(200, 15%, 8%);
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 1000;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .dark-mode .header {
-  background-color: #1f1f1f;
-  color: #ffffff;
+  background-color: hsl(209, 23%, 22%);
 }
 
+/* Main Content */
 .content {
   width: 100%;
   margin: 2rem 0;
-  padding: 0 0;
+  padding: 0;
 }
 
-.dark-light-toggler {
-  display: flex; 
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  padding: 1rem;
- 
-  color: rgb(68, 64, 64);
+/* Button */
+button {
+  background: none;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
+  color: inherit;
 }
 
-/* Optional: Additional styling for the button */
-.dark-light-toggler:hover {
+button:hover {
   text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .search {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding: 0 10rem;
+  }
+
+  .header {
+    padding: 1rem 10rem;
+  }
+
+  .search {
+    padding: 0 10rem;
+  }
 }

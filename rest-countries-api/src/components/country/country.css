@@ -1,21 +1,33 @@
-/* country.css */
+/* Country Card */
 .country {
     display: flex;
     flex-direction: column;
-    width: 100%; /* Adjusted from 1072px */
+    width: 100%;
     max-width: 200px;
-    border: 1px solid #ccc;
-    /* margin-top: 1rem; */
+    border: 1px solid hsl(0, 0%, 52%);
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     padding-bottom: 1rem;
-}
-
-.country h3, .country p {
-    margin-left: 1rem;
-}
-
-.country h3 {
+  }
+  
+  .country img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid hsl(0, 0%, 52%);
+  }
+  
+  .country h3, .country p {
+    padding: 0 1rem;
+  }
+  
+  .country h3 {
     margin-top: 1rem;
-}
+    font-weight: 800;
+  }
+  
+  .country p {
+    font-weight: 300;
+  }
+  
