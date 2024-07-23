@@ -14,9 +14,9 @@ const Country = ({country}) => {
     navigate(`/country/${country.name}`)
   }
   return (
-    <div className='country' onClick={handleClick} style={{ cursor: "pointer"}}>
-        <img src={country.flag} alt={country.name} />
-        <div className={ darkMode ?'country-info dark-mode' : 'country-info'} >
+    <div className={darkMode ?  'country-card dark-mode' : 'country-card'} onClick={handleClick} style={{ cursor: "pointer"}}>
+        <img className="country-flag" src={country.flag} alt={`${country.name} flag`} />
+        <div className='country-info' >
             <h3>{country.name}</h3>
              <p><span>Population:</span> {country.population}</p>
               <p><span>Region:</span> {country.region}</p>

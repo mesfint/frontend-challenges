@@ -1,42 +1,48 @@
-/* Country Card */
-.country {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 200px;
-    /* border: 1px solid hsl(0, 0%, 52%); */
-    /* background-color: hsl(209, 23%, 22%); */
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding-bottom: 1rem;
-  }
-  
-  .country img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-bottom: 1px solid hsl(0, 0%, 52%);
-  }
-  
-  .country h3, .country p {
-    padding: 0 1rem;
-  }
-  
-  .country h3 {
-    margin-top: 1rem;
-    font-weight: 800;
-  }
-  
-  .country p {
-    font-weight: 300;
-  }
-  .country-info span {
-    font-weight: 400;
-  }
+/* Country Card Styles */
+.country-card {
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.country-card:hover {
+  transform: translateY(-5px);
+}
+
+.country-flag {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9; /* Maintain a 16:9 aspect ratio */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.country-info {
+  padding: 1rem;
+}
+
+.country-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.country-info p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+  /* background-color: var(--dark-blue-elements); */
+  /* color: var(--white); */
+}
+
+.dark-mode .country-card {
+  background-color: var( --dark-blue-elements);
+  color: var(--white);
+}
 
 
-.dark-mode .country-info {
-  background-color: hsl(207, 26%, 17%);
-  color: #ffffff;
+@media (max-width: 375px) {
+  .country-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }

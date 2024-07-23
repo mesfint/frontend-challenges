@@ -63,7 +63,7 @@ const CountryList = ({ countries, loading }) => {
             <LuLoader2 className="loading-icon" />
           </div>
         ) : (
-          <div className={ darkMode ? 'country-content dark-mode' : 'country-content'}>
+          <div className={ darkMode ? 'country-list dark-mode' : 'country-list'}>
             {filteredCountries && filteredCountries.map((country) => (
               <div key={country.name}>
                 <Country country={country} />

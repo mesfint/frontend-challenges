@@ -10,10 +10,10 @@ const Layout = () => {
 
   return (
     <div className={ darkMode ? 'container dark-mode' : 'container'}>
-      <header className="header">
+      <header className={darkMode ?  "header dard-mode" : "header"}>
         <p>Where in the world?</p>
        
-        <button className='dark-light-toggler' onClick={toggleDarkMode}> <MdOutlineLightMode className={ darkMode ? 'icon dark-mode' : 'icon'}/> {darkMode ? 'Light Mode': 'Dark Mode'}</button>
+        <button className='dark-light-toggler' onClick={toggleDarkMode}> <MdOutlineLightMode/> {darkMode ? 'Light Mode': 'Dark Mode'}</button>
       </header>
       <main className={ darkMode ? 'content dark-mode': 'content'}>
      <Outlet />
