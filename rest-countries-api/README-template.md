@@ -35,81 +35,140 @@ Users should be able to:
 
 ![](https://github.com/mesfint/frontend-challenges/blob/main/rest-countries-api/responsive-homepage.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL ](https://github.com/mesfint/frontend-challenges/tree/main/rest-countries-api)
+- Live Site URL: [Live site URL](https://responsive-countries-rest-api.netlify.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- Vanila CSS with custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [React Icons](https://react-icons.github.io/react-icons/) - Free React Icons
+- [ReactRouter](https://reactrouter.com/en/main) - For navigation and routing
+- [ViteJs](https://vitejs.dev/guide/) -  "Build tool that aims to provide a faster and leaner development experience for modern web projects"
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+In this project, I gained a comprehensive understanding of responsive web design and the importance of adaptability across different screen sizes. I learned how to implement context in a React application, effectively managing global states such as dark mode and regional data filtering. This involved using hooks like useState, useContext, and useEffect to handle dynamic data and user interactions seamlessly.
 
-To see how you can add code snippets, see below:
+I also refreash my CSS skills, particularly in creating responsive layouts with flexbox and media queries, ensuring a smooth user experience on both large and small screens. Furthermore, I explored how to style components conditionally based on context, such as applying dark mode styles and dynamically showing or hiding elements like dropdown menus.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+Overall, this project enhanced my ability to build user-friendly and accessible web applications, focusing on both functionality and aesthetic design.
+
+```jsx
+ <div className="border-countries">
+           <p>Border Countries: </p>
+           {country.borders?.length ? (
+             country.borders.map((border) => {
+               const borderCountry = countries.find((c) => c.alpha3Code === border);
+               return borderCountry ? (
+                 <button className='borders' onClick={()=>handleClick(borderCountry.name)} key={borderCountry.alpha3Code}>{borderCountry.name}</button>
+               ) : null;
+             })
+           ) : (
+             <p>No border countries</p>
+           )}
+          
+        </div>
+      </div>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+/* Responsive Styles */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .search {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details img {
+    max-width: 100%;
+  }
+}
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+ useEffect(() => {
+    const savedMode = localStorage.getItem('darkMode') === 'true';
+    setDarkMode(savedMode);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', darkMode);
+  }, [darkMode]);
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+-  Cross-Browser Functionality:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Ensuring that web applications function consistently across all major browsers is often challenging due to differences in rendering engines and supported features. I want to dig deeper into cross-browser compatibility issues and learn best practices for handling them. This includes becoming more proficient in using tools like ```BrowserStack``` for testing and understanding browser-specific CSS prefixes and polyfills.
 
-### Useful resources
+-  Performance Optimization:
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+Improving the performance of web applications is crucial for user experience. I plan to focus on techniques for optimizing load times and responsiveness, such as code splitting, lazy loading, and optimizing images and assets.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+
+### How to run this Project in your machine
+
+-  Clone the Repository: If you haven't already, clone the project repository to your local machine.
+
+  ```js
+  git clone https://github.com/mesfint/frontend-challenges/tree/main/rest-countries-api
+ cd rest-countries-api
+
+
+  ```
+
+#### Makefile Instructions
+
+To streamline the setup and running of this project, I have created a Makefile. This file simplifies the process of installing dependencies and starting the development server. You can use it to run the project either all at once or step by step. Here's how you can use it:
+
+-  Running All at Once
+
+  You can execute all necessary steps with a single command. This is the easiest way to get started:
+
+-  Run the Makefile: Navigate to the project directory and use the Makefile to install dependencies and start the development server all at once.
+
+  ```js
+  make all
+
+ 
+  ```
+-  NB. The makefile is already available in the root directory for reference.
+
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Linkedin - [@mesfin](https://www.linkedin.com/in/mesfin/)
+- Frontend Mentor - [@mesfint](https://www.frontendmentor.io/profile/mesfint)
+- Twitter - [@MesfinTe](https://x.com/MesfinTe)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+I like to appreciate everyone who were supportive in the Discord community!
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+
