@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FaArrowAltCircleLeft } from "react-icons/fa";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { DarkModeContext } from '../../context/DarkModeContext';
 import './countryDetail.css';
 
@@ -9,11 +9,16 @@ import './countryDetail.css';
 const CountryDetail = ({ countries }) => {
   const { darkMode } = useContext(DarkModeContext);
   const { name } = useParams();
+  const navigate = useNavigate();
   const country = countries && countries.find((c) => c.name === name);
 
   if (!country) {
     return <p>Country not found</p>;
   }
+  // Function to handle click on border country
+  const handleClick = (borderCountryName) => {
+    navigate(`/country/${borderCountryName}`);
+  };
   return (
     <>
       <button className={darkMode ? 'back-button dark-mode': 'back-button'} onClick={() => window.history.back()}><FaArrowAltCircleLeft />
@@ -44,7 +49,7 @@ const CountryDetail = ({ countries }) => {
              country.borders.map((border) => {
                const borderCountry = countries.find((c) => c.alpha3Code === border);
                return borderCountry ? (
-                 <button className='borders' key={borderCountry.alpha3Code}>{borderCountry.name}</button>
+                 <button className='borders' onClick={()=>handleClick(borderCountry.name)} key={borderCountry.alpha3Code}>{borderCountry.name}</button>
                ) : null;
              })
            ) : (

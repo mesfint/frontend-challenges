@@ -45,12 +45,7 @@ const CountryList = ({ countries, loading }) => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)} 
         />
-        
-
           <DropdownMenu regions={['All', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania']} handleRegionChange={handleRegionChange} />
-
-
-        
 
       </div>
       
