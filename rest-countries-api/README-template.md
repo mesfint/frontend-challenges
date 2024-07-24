@@ -118,6 +118,9 @@ Overall, this project enhanced my ability to build user-friendly and accessible 
   }, [darkMode]);
 ```
 
+![](https://github.com/mesfint/frontend-challenges/blob/main/rest-countries-api/responsive-white.png)
+
+
 
 ### Continued development
 
