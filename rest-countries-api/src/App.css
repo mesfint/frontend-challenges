@@ -25,7 +25,7 @@
 
 
 /* Container */
-.container {
+/* .container {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -34,6 +34,20 @@
   color: var( --very-dark-blue-text);
   transition: background-color 0.3s, color 0.3s;
   padding-top: 6rem;
+  
+} */
+.container {
+  display: flex;
+  flex-direction: column; /* Adjust as needed */
+  justify-content: space-between; /* Adjust to position children */
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 5rem;
+  background-color: var(--white);
+  color: var( --very-dark-blue-text);
+  transition: background-color 0.3s, color 0.3s;
+  padding-top: 6rem;
+  min-height: 100vh;
   
 }
 .container.dark-mode  {
@@ -141,10 +155,11 @@ button:hover {
   }
 
   .header {
-    padding: 1rem 10rem;
+    padding: 1rem 12rem;
   }
 
   .search {
     padding: 0 10rem;
   }
 }
+

@@ -38,10 +38,11 @@ const CountryList = ({ countries, loading }) => {
   return (
     <main className={darkMode ? 'content dark-mode' : 'content'}>
       <div className='search'>
+        
         <input 
           className={darkMode ? 'input dark-mode' : 'input'}
           type="text" 
-          placeholder={getPlaceholderText()}
+          placeholder={ getPlaceholderText()}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)} 
         />
