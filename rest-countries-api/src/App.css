@@ -23,6 +23,7 @@
   --font-weight-extra-bold: 800;
 }
 
+
 /* Container */
 .container {
   display: flex;
@@ -63,6 +64,7 @@
   padding: 1rem 7rem;
   background-color: var(--white);
   color: var( --very-dark-blue-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   left: 0;
